@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title or "Lazy Valley" }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Lazy Valley</h1>
+    <nav>
+      <a href="/index.html">Home</a> |
+      <a href="/team/sample-bio.html">Team</a> |
+      <a href="/findings/sample-finding.html">Findings</a> |
+      <a href="/stories/sample-story.html">Stories</a> |
+      <a href="/services/sample-service.html">Services</a>
+    </nav>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer>
+    <p>&copy; 2025 Lazy Valley</p>
+  </footer>
+</body>
+</html>
