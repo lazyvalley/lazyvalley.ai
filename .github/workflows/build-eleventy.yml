@@ -3,11 +3,11 @@ name: Build and Deploy Eleventy Site
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,8 +26,8 @@ jobs:
         run: |
           npx eleventy
 
-      - name: Upload HTML output
-        uses: actions/upload-artifact@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: eleventy-site
-          path: _site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
